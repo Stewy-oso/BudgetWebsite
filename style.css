@@ -1,0 +1,66 @@
+/* CSS Document */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+
+* {
+    font-size: 62.5%;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: black;
+    color: whitesmoke;
+}
+
+#setRed {
+    color: #ff0000;
+    text-decoration: underline;
+    font-size: inherit;
+}
+
+/* Header Part */
+
+.header {
+    text-align: right;
+    height: 3.5rem;
+}
+
+.header a{
+    font-size: 1.7rem;
+    color: whitesmoke;
+    text-decoration: none;
+    padding: 0 1.2rem;
+    margin: 1.4rem;
+}
+
+/* Main Part */
+
+.welcome {
+    font-size: 5.5rem;
+    margin: 1rem;
+    padding: 1rem 1.2rem;
+}
+
+.setMiddle a {
+    font-size: 10rem;
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.setMiddle {
+    min-width: min-content;
+    max-width: max-content;
+    width: auto;
+    height: auto;
+    margin: auto;
+}
+
+/* Footer */
+
+footer {
+    font-size: 2rem;
+    text-align: right;
+}
