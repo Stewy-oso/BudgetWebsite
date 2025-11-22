@@ -15,6 +15,10 @@ body {
     color: whitesmoke;
 }
 
+main {
+    font-size: 4em;
+}
+
 #setRed {
     color: #ff0000;
     text-decoration: underline;
