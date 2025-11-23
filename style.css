@@ -1,5 +1,18 @@
 /* CSS Document */
 
+/* 
+Color Palette
+Primary: #E47F32
+         #C7602C
+BG: #1E1A18
+Secondary: #F5C542 (Honey)
+Cards: #2A2422
+Accents: #3D3633
+         #D94862 (Red)
+Text: #3A2E2E (Coffee)
+      #F2E9DF
+*/
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
 
@@ -11,18 +24,23 @@
 }
 
 body {
-    background-color: black;
-    color: whitesmoke;
+    background-color: #1E1A18;
+    color: #F2E9DF;
 }
 
 main {
-    font-size: 4em;
+    font-size: 4.5em;
 }
 
 #setRed {
-    color: #ff0000;
+    color: #D94862;
     text-decoration: underline;
     font-size: inherit;
+}
+
+#setCenter {
+    width: fit-content;
+    margin: auto;
 }
 
 /* Header Part */
@@ -30,17 +48,18 @@ main {
 .header {
     text-align: right;
     height: 3.5rem;
+    padding-bottom: 1rem;
 }
 
 .header a{
     font-size: 1.7rem;
-    color: whitesmoke;
+    color: #F2E9DF;
     text-decoration: none;
     padding: 0 1.2rem;
     margin: 1.4rem;
 }
 
-/* Main Part */
+/* Index Main Part */
 
 .welcome {
     font-size: 5.5rem;
@@ -50,8 +69,9 @@ main {
 
 .setMiddle a {
     font-size: 10rem;
-    color: #ffffff;
+    color: #F2E9DF;
     text-decoration: underline;
+    padding-top: 6rem;
 }
 
 .setMiddle {
@@ -62,9 +82,41 @@ main {
     margin: auto;
 }
 
+/* Budget Main Part */
+
+/* .income {
+    background-color: #2A2422;
+    color: #C1B5AD;
+    max-width: fit-content;
+    margin: 4rem;
+    padding: 3rem;
+    border: 5px solid #3A2E2E;
+    border-radius: 1rem;
+    font-size: larger;
+}
+
+.expenses {
+    background-color: #2A2422;
+    color: #C1B5AD;
+    max-width: fit-content;
+    margin: 4rem;
+    padding: 3rem;
+    border: 5px solid #3A2E2E;
+    border-radius: 1rem;
+    font-size: larger;
+} */
+
+.button {
+    font-size: larger;
+    /* background-color: #3A2E2E; */
+    color: #3A2E2E;
+}
+
 /* Footer */
 
 footer {
+    margin-top: 15%;
     font-size: 2rem;
     text-align: right;
 }
+
