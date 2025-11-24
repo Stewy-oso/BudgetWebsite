@@ -43,6 +43,7 @@ main {
     margin: auto;
 }
 
+
 /* Header Part */
 
 .header {
@@ -84,18 +85,34 @@ main {
 
 /* Budget Main Part */
 
-/* .income {
+.gatherData {
     background-color: #2A2422;
     color: #C1B5AD;
     max-width: fit-content;
-    margin: 4rem;
+    min-width: min-content;
+    margin: auto;
+    margin-top: 2rem;
     padding: 3rem;
     border: 5px solid #3A2E2E;
     border-radius: 1rem;
     font-size: larger;
 }
 
-.expenses {
+.gatherData legend {
+    text-decoration: underline;
+}
+
+#id {
+    width: 17rem;
+    text-align: center;
+    margin: auto;
+}
+
+#dateOfRecord {
+    width: 17rem;
+}
+
+/* .expenses {
     background-color: #2A2422;
     color: #C1B5AD;
     max-width: fit-content;

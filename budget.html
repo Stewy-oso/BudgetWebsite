@@ -18,8 +18,8 @@
     </header>
 
     <main>
-        <form action="" method="get" class="income">
-            <h1>Income</h1>
+        <form action="" method="get" class="gatherData">
+            <!-- <h1>Income</h1>
             <input type="number" name="Wage" id="wage">
             <label for="wage">Wages</label><br>
 
@@ -31,12 +31,27 @@
 
             <input type="number" name="freelancing" id="freelancing">
             <label for="freelancing">Freelancing</label><br>
+            <div class="button" id="setCenter"> -->
+
+            <legend>Enter Your Details</legend>
+            
+            <input type="radio" name="income" id="income">
+                <label for="income">Income</label>
+            <input type="radio" name="income" id="expense">
+                <label for="expense">Expenses</label> <br>
+
+            <label for="identifier" id="insertType">Type:</label>
+            <input type="text" name="identifier" id="id"><br>
+
+            <label for="date">Date:</label>
+            <input type="date" name="dateOfRecord" id="dateOfRecord"><br>
+            
             <div class="button" id="setCenter">
-                <input type="submit" value="Submit">
+            <input type="submit" value="Submit">
             </div>
         </form>
 
-        <form action="" method="get" class="expenses">
+        <!-- <form action="" method="get" class="expenses">
             <h1>Expenses</h1>
             <input type="number" name="Wage" id="wage">
             <label for="wage">Wages</label><br>
@@ -52,7 +67,10 @@
             <div class="button" id="setCenter">
                 <input type="submit" value="Submit">
             </div>
-        </form>
+        </form> -->
+        <div class="dataRecord">
+            
+        </div>
     </main>
 
     <footer>
