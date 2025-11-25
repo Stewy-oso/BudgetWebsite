@@ -123,6 +123,7 @@ main {
     border: 5px solid #3A2E2E;
     border-radius: 1rem;
     font-size: larger;
+    text-align: center;
 }
 
 .gatherData legend {
@@ -155,7 +156,7 @@ main {
     max-width: 50rem;
     padding: 3rem;
     margin: auto;
-    margin-top: 7rem;
+    margin-top: 5rem;
     background-color: #2A2422;
     border: 5px solid #3A2E2E;
     border-radius: 1rem;
