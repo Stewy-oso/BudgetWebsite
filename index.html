@@ -5,26 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
-    <title>Budget App  |  Home</title>
+    <title>Budget App  |  Log In</title>
 </head>
 <body>
-    <header>
+    <!-- <header>
         <div class="header">
             <a href="index.html">Home</a>
             <a href="budget.html">Budget</a>
-            <a href="about.html">About</a>
+            <a href="report.html">Report</a>
         </div>
         <hr>
-    </header>
+    </header> -->
 
 
     <main>
         <div class="welcome">
-            <h1>Hello!</h1>
-            <h2>Struggling with money and trying to <span id="setRed">cut</span> loose ends? <br>
-            Look no further! There is a nice, interactive, and completely <span id="setRed">FREE</span> 
-            </h2>
-            <div class="setMiddle"><a href="budget.html">Budget Application!</a></div>
+            <form class="welcomeForm">
+                <label for="user">Username</label><br>
+                <input type="text" name="user" id="username"><br>
+
+                <label for="pass">Password</label><br>
+                <input type="password" name="pass" id="password"><br>
+
+                <button><a href="budget.html">Login</a></button>
+            </form>
         </div>
     </main>
 

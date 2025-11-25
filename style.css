@@ -62,33 +62,60 @@ main {
 
 /* Index Main Part */
 
-.welcome {
+.welcomeForm {
     font-size: 5.5rem;
-    margin: 1rem;
+    margin: auto;
+    margin-top: 5rem;
     padding: 1rem 1.2rem;
+    background-color: #2A2422;
+    border-radius: 1rem;
+    width: fit-content;
+    height: 50rem;
+    text-align: center;
 }
 
-.setMiddle a {
-    font-size: 10rem;
-    color: #F2E9DF;
-    text-decoration: underline;
-    padding-top: 6rem;
+.welcomeForm input {
+    border-radius: 1rem;
+    border: 1px solid #3A2E2E;
+    background-color: #1E1A18;
+    color: #fff;
 }
 
-.setMiddle {
-    min-width: min-content;
-    max-width: max-content;
-    width: auto;
-    height: auto;
+.welcomeForm input:hover {
+    border: 2px solid #C1B5AD;
+    background-color: #C1B5AD;
+    color: #1E1A18;
+}
+
+.welcomeForm button {
+    background-color: #C7602C;
+    color: #fff;
+    text-decoration: none;
+    border: 1px solid #3A2E2E;
+    border-radius: 0.75rem;
+    width: fit-content;
     margin: auto;
 }
 
+.welcomeForm button:hover {
+    border: 3px solid #3A2E2E;
+    background-color: #9B4A21;
+    margin-top: 1.5rem;
+    margin-left: .5rem;
+}
+
+.welcomeForm a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 2.5rem;
+    padding: 1rem;
+}
 /* Budget Main Part */
 
 .gatherData {
     background-color: #2A2422;
     color: #C1B5AD;
-    max-width: fit-content;
+    max-width: 50rem;
     min-width: min-content;
     margin: auto;
     margin-top: 2rem;
@@ -102,6 +129,16 @@ main {
     text-decoration: underline;
 }
 
+#submitBtn {
+    background-color: #C7602C;
+    color: #fff;
+    border: 2px solid #3A2E2E;
+    border-radius: 0.5rem;
+    font-size: 2.5rem;
+    padding: 0.5rem;
+    margin-top: 2rem;
+}
+
 #id {
     width: 17rem;
     text-align: center;
@@ -112,21 +149,16 @@ main {
     width: 17rem;
 }
 
-/* .expenses {
-    background-color: #2A2422;
-    color: #C1B5AD;
-    max-width: fit-content;
-    margin: 4rem;
+/* Records Table */
+.dataRecord {
+    font-size: 7rem;
+    max-width: 50rem;
     padding: 3rem;
+    margin: auto;
+    margin-top: 7rem;
+    background-color: #2A2422;
     border: 5px solid #3A2E2E;
     border-radius: 1rem;
-    font-size: larger;
-} */
-
-.button {
-    font-size: larger;
-    /* background-color: #3A2E2E; */
-    color: #3A2E2E;
 }
 
 /* Footer */
