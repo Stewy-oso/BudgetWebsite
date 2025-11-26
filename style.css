@@ -169,6 +169,49 @@ main {
     width: 17rem;
 }
 
+/* Overall Income Part */
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.overallIncome {
+    background-color: #2A2422;
+    border: 2px solid #3A2E2E;
+    border-radius: 1rem;
+    width: 50%;
+    margin: 2rem 4rem;
+    text-align: center;
+    font-size: 5rem;
+    text-align: center;
+}
+
+.overallExpense {
+    background-color: #2A2422;
+    border: 2px solid #3A2E2E;
+    border-radius: 1rem;
+    width: 50%;
+    text-align: center;
+    margin: 2rem 4rem;
+    font-size: 5rem;
+    text-align: center;
+}
+
+#overallIncomeHead th,
+#overallIncomeBody td,
+#overallIncomeBody tr {
+    text-align: center;
+    font-size: 2.5rem;
+    padding: 2rem 4rem;
+}
+
+#overallExpenseHead th,
+#overallExpenseBody td,
+#overallExpenseBody tr {
+    text-align: center;
+    font-size: 2.5rem;
+    padding: 2rem 4rem;
+}
 /* Records Table */
 .dataRecord {
     font-size: 7rem;
@@ -189,6 +232,7 @@ main {
     width: 100%;
     border-collapse: collapse;
     text-align: left;
+    height: fit-content;
 }
 
 #recordsTable th,

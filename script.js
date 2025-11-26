@@ -9,11 +9,21 @@ submitBtn.addEventListener("click", function () {
     const identifier = document.getElementById("id").value;
     const date = document.getElementById("dateOfRecord").value;
 
+    const userRecord = {
+        type: incomeType.value,
+        amount: amount,
+        identifier: identifier,
+        date: date
+    }
+
+    localStorage.setItem("userRecord", JSON.stringify(userRecord));
+
+
 
 
     //Validation to check if user chose type/identifier/date/amount
     if(!incomeType || !date || !identifier || !amount) {
-        alert("Please select Income or Expense, insert a date, an identifier and insert an amount Please.");
+        alert("Please fill all input fields");
     }
 
     //Validation to check if amount is less than or equal to 0
@@ -66,6 +76,22 @@ submitBtn.addEventListener("click", function () {
     //Insert row into table body
     recordsBody.appendChild(newRow);
 
+    // //Insert Amount into income/Expense
+    // let overallIn = 0;
+    // let realIn = 0;
+    // let overallExp = 0;
+    // let realExp = 0;
+
+    // if(incomeType.value == 'Income') {
+    //     overallIn += amount;
+    //     realIn += amount;
+    // } else {
+    //     overallExp += amount;
+    //     realExp += amount;
+    // }
+
+    // updateTotals();
+
     //Clear Form
     document.querySelector(".gatherData").reset();
 
@@ -73,5 +99,13 @@ submitBtn.addEventListener("click", function () {
     deleteBtn.addEventListener("click", function() {
         //Delete row
         recordsBody.removeChild(newRow);
+        localStorage.removeItem(userRecord);
     })
 })
+
+// function updateTotals() {
+//     document.getElementById("overallIncomeAmt").textContent = '' + overallIn;
+//     document.getElementById("realIncomeAmt").textContent;
+//     document.getElementById("overallExpenseAmt").textContent;
+//     document.getElementById("realExpenseAmt").textContent;
+// }
