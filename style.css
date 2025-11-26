@@ -130,6 +130,25 @@ main {
     text-decoration: underline;
 }
 
+.gatherData input {
+    border-radius: 1rem;
+    border: 1px solid #3A2E2E;
+    background-color: #1E1A18;
+    color: #fff;
+    padding: 0 1rem;
+}
+
+#amount {
+    width: 16rem;
+    text-align: left;
+}
+
+.gatherData input:hover {
+    border: 2px solid #C1B5AD;
+    background-color: #C1B5AD;
+    color: #1E1A18;
+}
+
 #submitBtn {
     background-color: #C7602C;
     color: #fff;
@@ -160,6 +179,34 @@ main {
     background-color: #2A2422;
     border: 5px solid #3A2E2E;
     border-radius: 1rem;
+}
+
+.dataRecord h2 {
+    margin-bottom: 1.75rem;
+}
+
+#recordsTable {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+#recordsTable th,
+#recordsTable td,
+#recordsTable tr {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #C1B5AD;
+    border-left: 1px solid #C1B5AD;
+    font-size: 1.5rem;
+}
+
+#deleteBtn {
+    background-color: #C7602C;
+    color: #fff;
+    border: 2px solid #3A2E2E;
+    border-radius: 0.5rem;
+    font-size: 1.5rem;
+    padding: 0.5rem;
 }
 
 /* Footer */

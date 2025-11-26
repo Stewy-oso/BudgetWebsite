@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Budget App  |  Budget</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
 </head>
 <body>
     <header>
@@ -16,35 +15,40 @@
         </div>
         <hr>
     </header>
-
+    
     <main>
         <form class="gatherData">
-
+            
             <legend>Enter Your Details</legend>
             
-            <input type="radio" name="income" id="income" value="income">
-                <label for="income">Income</label>
-            <input type="radio" name="income" id="expense" value="expense">
-                <label for="expense">Expenses</label> <br>
+            <input type="radio" name="income" id="income" value="Income">
+            <label for="income">Income</label>
+            <input type="radio" name="income" id="expense" value="Expense">
+            <label for="expense">Expenses</label> <br>
 
+            <label for="amount">Amount:</label>
+            <input type="number" name="amount" id="amount" step="0.01" value="0.00"><br>
+            
             <label for="identifier" id="insertType">Type:</label>
             <input type="text" name="identifier" id="id"><br>
-
+            
             <label for="date">Date:</label>
             <input type="date" name="dateOfRecord" id="dateOfRecord"><br>
             
             <div id="setCenter">
-            <input type="button" value="Submit" id="submitBtn">
+                <input type="button" value="Submit" id="submitBtn">
             </div>
         </form>
-
+        
         <div class="dataRecord">
             <h2>Records Table</h2>
+            <hr>
             <table id="recordsTable">
                 <thead>
                     <tr>
+                        <th>Type</th>
                         <th>Amount</th>
-                        <th>identifier</th>
+                        <th>Identifier</th>
                         <th>Date</th>
                     </tr>
                 </thead>
@@ -54,13 +58,14 @@
             </table>
         </div>
     </main>
-
+    
     <footer>
         <!-- Insert logo here -->
         <p>&#169;</p>
         <p>All Rights Reserved.</p>
     </footer>
-
     
+    
+    <script src="script.js"></script>
 </body>
 </html>
