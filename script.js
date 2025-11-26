@@ -9,6 +9,12 @@ submitBtn.addEventListener("click", function () {
     const identifier = document.getElementById("id").value;
     const date = document.getElementById("dateOfRecord").value;
 
+
+    //LocalStorage War of misery and Pain
+    //Trying to push into a JSONified 
+    //Load or create empty string
+    let userData = JSON.parse(localStorage.getItem("userRecord")) || [];
+
     const userRecord = {
         type: incomeType.value,
         amount: amount,
@@ -16,7 +22,9 @@ submitBtn.addEventListener("click", function () {
         date: date
     }
 
-    localStorage.setItem("userRecord", JSON.stringify(userRecord));
+    userData.push(userRecord);
+    
+    localStorage.setItem("userRecord", JSON.stringify(userData));
 
 
 
@@ -98,8 +106,23 @@ submitBtn.addEventListener("click", function () {
     //Making the delete button functional
     deleteBtn.addEventListener("click", function() {
         //Delete row
-        recordsBody.removeChild(newRow);
-        localStorage.removeItem(userRecord);
+        newRow.remove();
+        //retrieves all data from row
+        let saved = JSON.parse(localStorage.getItem("userRecord"));
+        //
+        for(let i = 0; i < saved.length; i++) {
+            if (
+                saved[i].type === userRecord.type &&
+                saved[i].amount === userRecord.amount &&
+                saved[i].identifier === userRecord.identifier &&
+                saved[i].date === userRecord.date
+            ) {
+                saved.splice(i, 1);
+                break;
+            }
+        }
+
+        localStorage.setItem("userRecord", JSON.stringify(saved));
     })
 })
 
