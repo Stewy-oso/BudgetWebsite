@@ -253,6 +253,11 @@ main {
     padding: 0.5rem;
 }
 
+canvas {
+    max-width: 85%;
+    max-width: 45%;
+}
+
 /* Footer */
 
 footer {
