@@ -188,6 +188,39 @@ if (document.body.id === "budget-page") {
             localStorage.setItem("userRecord", JSON.stringify(saved));
         })
     })
+
+    //Remove all data button
+
+    const clearBtn = document.getElementById("clearAllBtn");
+
+    clearBtn.addEventListener("click", function() {
+
+        //Removes all (pain and misery)
+        localStorage.removeItem("currentIncome");
+        localStorage.removeItem("currentExpense");
+        localStorage.removeItem("overallIncome");
+        localStorage.removeItem("overallExpense");
+        localStorage.removeItem("userRecord");
+        localStorage.removeItem("userIncome");
+        localStorage.removeItem("userExpense");
+        localStorage.removeItem("chartData");
+
+        //RESET VALUES
+        overallExpense = 0;
+        overallIncome = 0;
+        currentExpense = 0;
+        currentIncome = 0;
+
+        //Reset displayed totals
+        document.getElementById("overallIncomeAmt").textContent = "€" + overallIncome;
+        document.getElementById("realIncomeAmt").textContent = "€" + currentIncome;
+        document.getElementById("overallExpenseAmt").textContent = "€" + overallExpense;
+        document.getElementById("realExpenseAmt").textContent = "€" + currentExpense;
+
+        recordsBody.innerHTML = "";
+
+        alert("All data has been cleared!");
+    })
 }
 
 
@@ -197,8 +230,12 @@ if (document.body.id === "report-page") {
 
     //All code below (until end) belongs to Anne O Brien
 
-//Loading and validating data from localStorage
+    //Loading and validating data from localStorage
     
+    //Delete Later
+    console.log("Report Page is running!");
+    console.log("Chart.JS present?", typeof Chart);
+    console.log("Canvas present?", document.getElementById("dataChart"));
 
 
     let chartData = {
@@ -221,7 +258,10 @@ if (document.body.id === "report-page") {
         }
     } catch (err) {
         console.error("Error loading chart data:", err);
-        chartData = {labels: [], values: []}; //Fallback
+        chartData = {labels: ["Income", "Expenses"], values: [
+            Number(localStorage.getItem("overallIncome")) || 0,
+            Number(localStorage.getItem("overallExpense")) || 0
+        ]}; //Fallback
     }
 
     //Creating Data Chart
@@ -229,10 +269,11 @@ if (document.body.id === "report-page") {
     const ctx = document.getElementById("dataChart").getContext("2d");
     new Chart(ctx, {
         type: "pie",
-        labels: chartData.labels,
-        datasets: [{
+        data: {
             labels: chartData.labels,
-                label: "Budget Breakdown",
+            datasets: [{
+            labels: chartData.labels,
+                label: "Budget Chartified",
                 data: chartData.values,
                 backgroundColor: barColors,
                 borderColor: "rgba(58, 46, 46, 1)",
@@ -240,6 +281,7 @@ if (document.body.id === "report-page") {
             }],
         options: {
             responsive: true
+        }
         }
     });
 }
