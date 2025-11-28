@@ -181,6 +181,8 @@ if (document.body.id === "budget-page") {
                     saved.splice(i, 1);
                     break;
                 }
+
+                //Delete from chartData Local Storage
             }
 
             localStorage.setItem("userRecord", JSON.stringify(saved));
@@ -190,10 +192,22 @@ if (document.body.id === "budget-page") {
 
 
 if (document.body.id === "report-page") {
-//All code below (until end) belongs to Anne O Brien
+    let income = Number(localStorage.getItem("overallIncome")) || 0;
+    let expense = Number(localStorage.getItem("overallExpense")) || 0;
+
+    //All code below (until end) belongs to Anne O Brien
 
 //Loading and validating data from localStorage
-    let chartData;
+    
+
+
+    let chartData = {
+        labels: ["Income", "Expenses"],
+        values: [income, expense]
+    };
+
+    const barColors = ["rgba(228, 127, 50, 1)", "rgba(199, 96, 44, 1)"];
+
     try {
         const stored = localStorage.getItem("chartData");
         chartData = JSON.parse(stored);
@@ -210,28 +224,22 @@ if (document.body.id === "report-page") {
         chartData = {labels: [], values: []}; //Fallback
     }
 
-    const barColors = ["red", "green", "blue", "orange", "brown", "black"]
-
     //Creating Data Chart
 
     const ctx = document.getElementById("dataChart").getContext("2d");
     new Chart(ctx, {
         type: "pie",
-        data: {
+        labels: chartData.labels,
+        datasets: [{
             labels: chartData.labels,
-            datasets: [{
-                label: "Your record Chart",
+                label: "Budget Breakdown",
                 data: chartData.values,
                 backgroundColor: barColors,
-                borderColor: "rgba(54, 162, 235, 1)",
+                borderColor: "rgba(58, 46, 46, 1)",
                 borderWidth: 1
-            }]
-        },
+            }],
         options: {
-            responsive: true,
-            scales: {
-                y: {beginAtZero: true}
-            }
+            responsive: true
         }
     });
 }
