@@ -1,8 +1,7 @@
 if (document.body.id === "login-page") {
+    
     const userName = document.getElementById("username");
     const password = document.getElementById("password");
-
-    //Create an event listener first??? worked be
     
     const loginBtn = document.getElementById("loginBtn");
 
@@ -12,19 +11,15 @@ if (document.body.id === "login-page") {
 
 if (document.body.id === "budget-page") {
 
-    //Init variables (to keep track Real Time In/Out)
     let currentIncome = localStorage.getItem("currentIncome") || 0;
     let currentExpense = localStorage.getItem("currentExpense") || 0;
 
-    //Init overall totals
     let overallIncome = localStorage.getItem("overallIncome") || 0;
     let overallExpense = localStorage.getItem("overallExpense") || 0;
-
-    //Update on page
-    //Income
+    
     document.getElementById("overallIncomeAmt").textContent = "€" + overallIncome;
     document.getElementById("realIncomeAmt").textContent = "€" + currentIncome;
-    //Expenses
+    
     document.getElementById("overallExpenseAmt").textContent = "€" + overallExpense;
     document.getElementById("realExpenseAmt").textContent = "€" + currentExpense;
 
@@ -33,29 +28,26 @@ if (document.body.id === "budget-page") {
 
     submitBtn.addEventListener("click", function () {
 
-        //Gather values from the form
+        
         const incomeType = document.querySelector("input[name='income']:checked");
         const amountValue = document.getElementById("amount").value;
         const identifier = document.getElementById("id").value;
         const date = document.getElementById("dateOfRecord").value;
-        // Making the amount an actual number
+        
         let amount = Number(amountValue);
 
-        //Validation to check if user chose type/identifier/date/amount
+        
         if(!incomeType || !date || !identifier || !amount) {
             alert("Please fill all input fields");
             return;
         }
 
-        //Validation to check if amount is less than or equal to 0
+        
         if(amount <= 0) {
             alert("Amount cannot be less or equal to 0");
             return;
         }
 
-        //LocalStorage War of Misery and Pain
-        //Trying to push into a JSONified 
-        //Load or create empty string
         let userData = JSON.parse(localStorage.getItem("userRecord")) || [];
 
         const userRecord = {
@@ -65,7 +57,7 @@ if (document.body.id === "budget-page") {
             date: date
         }
 
-        //Load existing records from localStorage
+        
         let userIncome = JSON.parse(localStorage.getItem("userIncome")) || [];
         let userExpense = JSON.parse(localStorage.getItem("userExpense")) || [];
 
@@ -103,31 +95,30 @@ if (document.body.id === "budget-page") {
 
 
 
-        //Create new Row(s)
+        
         const newRow = document.createElement("tr");
 
-        //Create data cell for income or expense
+        
         let dataCell = document.createElement("td");
         let incomeOrExpense = document.createTextNode(incomeType.value);
         dataCell.appendChild(incomeOrExpense);
 
-        //Create data cell for Identifier
+        
         let dataCell2 = document.createElement("td");
         let insertIdentifier = document.createTextNode(identifier);
         dataCell2.appendChild(insertIdentifier);
 
-        //Create data cell for date
+        
         let dataCell3 = document.createElement("td");
         let insertDate = document.createTextNode(date);
         dataCell3.appendChild(insertDate);
 
-        //Create data cell for Amount
         let dataCell4 = document.createElement("td");
         let insertAmount = document.createTextNode("€" + amount);
         dataCell4.appendChild(insertAmount);
 
 
-        //Create Delete Button
+        
         let rowDelete = document.createElement("td");
         let deleteBtn = document.createElement("button");
         deleteBtn.id = "deleteBtn";
@@ -142,19 +133,19 @@ if (document.body.id === "budget-page") {
         newRow.appendChild(dataCell3);
         newRow.appendChild(deleteBtn);
 
-        //Insert row into table body
+        
         recordsBody.appendChild(newRow);
 
-        //Clear Form
+        
         document.querySelector(".gatherData").reset();
 
-        //Making the delete button functional
+        
         deleteBtn.addEventListener("click", function() {
 
-            //Update the income/expense cards
+            
             if(incomeType.value === "Income") {
                 
-                //If record deleted, remove from current income + overall
+                
                 currentIncome -= amount;
                 localStorage.setItem("currentIncome", currentIncome);
                 document.getElementById("realIncomeAmt").textContent = "€" + currentIncome;
@@ -174,9 +165,9 @@ if (document.body.id === "budget-page") {
                 document.getElementById("overallExpenseAmt").textContent = "€" + overallExpense;
             }
 
-            //Delete row
+            
             newRow.remove();
-            //retrieves all data from row
+            
             let saved = JSON.parse(localStorage.getItem("userRecord"));
             //
             for(let i = 0; i < saved.length; i++) {
@@ -190,14 +181,12 @@ if (document.body.id === "budget-page") {
                     break;
                 }
 
-                //Delete from chartData Local Storage
+                
             }
 
             localStorage.setItem("userRecord", JSON.stringify(saved));
         })
     })
-
-    //Remove all data button
 
     const clearBtn = document.getElementById("clearAllBtn");
 
@@ -213,13 +202,11 @@ if (document.body.id === "budget-page") {
         localStorage.removeItem("userExpense");
         localStorage.removeItem("chartData");
 
-        //RESET VALUES
         overallExpense = 0;
         overallIncome = 0;
         currentExpense = 0;
         currentIncome = 0;
 
-        //Reset displayed totals
         document.getElementById("overallIncomeAmt").textContent = "€" + overallIncome;
         document.getElementById("realIncomeAmt").textContent = "€" + currentIncome;
         document.getElementById("overallExpenseAmt").textContent = "€" + overallExpense;
@@ -236,14 +223,9 @@ if (document.body.id === "report-page") {
     let income = Number(localStorage.getItem("overallIncome")) || 0;
     let expense = Number(localStorage.getItem("overallExpense")) || 0;
 
-    //All code below (until end) belongs to Anne O Brien
-
-    //Loading and validating data from localStorage
-    
-    //Delete Later
-    console.log("Report Page is running!");
-    console.log("Chart.JS present?", typeof Chart);
-    console.log("Canvas present?", document.getElementById("dataChart"));
+    //All code below (until end) belongs to Anne O Brien        
+    console.log("works");
+    console.log("chart work?", document.getElementById("dataChart"));
 
 
     let chartData = {
@@ -259,7 +241,7 @@ if (document.body.id === "report-page") {
 
         console.log(chartData);
 
-        //Validate structure
+        
         if(!chartData || !Array.isArray(chartData.labels) ||
            !Array.isArray(chartData.values)) {
             throw new Error("Invalid chart data format");
@@ -269,10 +251,10 @@ if (document.body.id === "report-page") {
         chartData = {labels: ["Income", "Expenses"], values: [
             Number(localStorage.getItem("overallIncome")) || 0,
             Number(localStorage.getItem("overallExpense")) || 0
-        ]}; //Fallback
+        ]}; 
     }
 
-    //Creating Data Chart
+    
 
     const ctx = document.getElementById("dataChart").getContext("2d");
     new Chart(ctx, {
@@ -292,4 +274,6 @@ if (document.body.id === "report-page") {
         }
         }
     });
+
+    //End
 }
