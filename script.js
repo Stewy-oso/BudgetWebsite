@@ -1,16 +1,13 @@
 if (document.body.id === "login-page") {
-    const userName = document.getElementById("username").value;
-    const password = document.getElementById("password").value;
+    const userName = document.getElementById("username");
+    const password = document.getElementById("password");
 
     //Create an event listener first??? worked be
     
     const loginBtn = document.getElementById("loginBtn");
 
-    loginBtn.addEventListener("click", function () {
-        
-        
-    })
     
+
 } 
 
 if (document.body.id === "budget-page") {
