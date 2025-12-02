@@ -79,6 +79,7 @@ main {
     border: 1px solid #3A2E2E;
     background-color: #1E1A18;
     color: #fff;
+    padding-left: 1rem;
 }
 
 .welcomeForm input:hover {
