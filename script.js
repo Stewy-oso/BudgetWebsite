@@ -1,6 +1,6 @@
 if (document.body.id === "login-page") {
     
-    const userName = document.getElementById("username");
+    const username = document.getElementById("username");
     const password = document.getElementById("password");
     
     const loginBtn = document.getElementById("loginBtn");
@@ -73,6 +73,7 @@ if (document.body.id === "budget-page") {
 
             document.getElementById("overallIncomeAmt").textContent = "€" + overallIncome;
             document.getElementById("realIncomeAmt").textContent = "€" + currentIncome;
+
         } else if (incomeType.value === "Expense") {
             overallExpense += amount;
             currentExpense += amount;
@@ -168,14 +169,14 @@ if (document.body.id === "budget-page") {
             
             newRow.remove();
             
-            let saved = JSON.parse(localStorage.getItem("userRecord"));
+            let record = JSON.parse(localStorage.getItem("userRecord"));
             //
             for(let i = 0; i < saved.length; i++) {
                 if (
-                    saved[i].type === userRecord.type &&
-                    saved[i].amount === userRecord.amount &&
-                    saved[i].identifier === userRecord.identifier &&
-                    saved[i].date === userRecord.date
+                    record[i].type === userRecord.type &&
+                    record[i].amount === userRecord.amount &&
+                    record[i].identifier === userRecord.identifier &&
+                    record[i].date === userRecord.date
                 ) {
                     saved.splice(i, 1);
                     break;
