@@ -224,7 +224,7 @@ if (document.body.id === "report-page") {
     let income = Number(localStorage.getItem("overallIncome")) || 0;
     let expense = Number(localStorage.getItem("overallExpense")) || 0;
 
-    //All code below (until end) belongs to Anne O Brien        
+    //Code mainly(until end) belongs to Anne O Brien        
     console.log("works");
     console.log("chart work?", document.getElementById("dataChart"));
 
